@@ -92,7 +92,7 @@ if (dt.Rows.Count!=0)
 
 
 
----- find line
+//find line
 
 
 
@@ -131,10 +131,26 @@ foreach (DataRow dr in table.Rows)
 
 int minLavel = Convert.ToInt32(dt.Compute("min([AccountLevel])", string.Empty));
 
+//trim col names
+foreach(DataColumn dc in dt.Columns) // trim column names
+{
+   dc.ColumnName = dc.ColumnName.Trim();
+}
 
-
-
-
+foreach(DataRow dr in dt.Rows) // trim string data
+{
+  foreach(DataColumn dc in dt.Columns)
+  {
+      if(dc.DataType == typeof(string))
+      {
+	 object o = dr[dc];
+	 if(!Convert.IsDBNull(o) && o != null)
+	 {
+	    dr[dc] = o.ToString().Trim();
+	 }
+      }
+  }
+}  
 
 
 
