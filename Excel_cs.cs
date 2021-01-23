@@ -61,11 +61,12 @@ namespace WindowsFormsApp2{
       //To create a new Workbook
       public void CreateNewFile(){
         this.wb= excel.Workbooks.Adds(XlWBATemplate.xlWBATWorksheet);
+        this.ws= wb.Worksheets[1];
       }
     
       //To create a new Worksheet
-      public void Close(){
-        wb.Close();
+      public void CreateNewSheet(){
+        Worksheet tempsheet= wb.worksheets.Add(After: ws);
       }
     
     
