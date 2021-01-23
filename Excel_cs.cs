@@ -85,8 +85,16 @@ namespace WindowsFormsApp2{
     
     //To read multiple cells
     public string[,] ReadRange(int starti, int straty, int endi, int endy){
-      
+      Range range= (Range)ws.Range[ws.Cells[starti, straty],ws.Cells[endi, endy]];
       //obj is an holder for the values
+      object[,] holder = range.Value2;
+      string[,] returnstring= new string[endi-starti,endy-starty];
+      for(int p=1;p<=endi-starti;p++){
+        for(int q=1;q<=endy-starty;q++){
+          returnstring[p-1,q-1]=holder[p,q].ToString();
+        }
+      }
+      return returnstring;
     }
     
     //To write multiple cells
