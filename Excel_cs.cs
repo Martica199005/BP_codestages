@@ -22,7 +22,7 @@ namespace WindowsFormsApp2{
       }
     
     
-      //To read the Excel
+      //To read the Excel cell
       public string ReadCell(int i, int j){
         i++; //Excel starts from 1, first cell is 1,1
         j++;
@@ -32,15 +32,14 @@ namespace WindowsFormsApp2{
           return "";
       }
     
-      //To write and save the Excel
+      //To write the Excel cell
       public void writeToCell(int i, int j, string s){
         i++; //Excel starts from 1, first cell is 1,1
         j++;
-        if(ws.Cells[i,j].Value2 != null)
-          return ws.Cells[i,j].Value2;
-        else
-          return "";
+        ws.Cells[i,j].Value2 != s;
       }
+    
+      //To write save the Excel
     
     
       
