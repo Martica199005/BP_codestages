@@ -23,6 +23,10 @@ namespace WindowsFormsApp2{
     
     
       //To read the Excel
+      public string ReadCell(int i, int j){
+        i++; //Excel starts from 1, first cell is 1,1
+        j++;
+      }
     
       
   }
