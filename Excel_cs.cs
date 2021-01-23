@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 using _Excel=Microsoft.Office.Interop.Excel;
 
+//Example: when you create a new istance: 
+//Excel excel= new Excel(@"path", sheet_number);
+//excel.WriteCell(0,0,"Test");
+// close the application: excel.Close()
+
 
 namespace WindowsFormsApp2{
   class Excel{
@@ -46,6 +51,11 @@ namespace WindowsFormsApp2{
     
       public void SaveAs(string path){
         wb.SaveAs(path);
+      }
+    
+      //To close the application
+      public void Close(){
+        wb.Close();
       }
     
     
