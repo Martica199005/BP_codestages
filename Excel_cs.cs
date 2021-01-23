@@ -81,7 +81,15 @@ namespace WindowsFormsApp2{
       }
     
     
-    //excel.Application.DisplayAlerts = false  
+    //Use : excel.Application.DisplayAlerts = false  
+    
+    //To read multiple cells
+    public string[,] ReadRange(int starti, int straty, int endi, int endy){
+      
+      //obj is an holder for the values
+    }
+    
+    //To write multiple cells
   }
 
 }
