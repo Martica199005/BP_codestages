@@ -58,6 +58,16 @@ namespace WindowsFormsApp2{
         wb.Close();
       }
     
+      //To create a new Workbook
+      public void CreateNewFile(){
+        this.wb= excel.Workbooks.Adds(XlWBATemplate.xlWBATWorksheet);
+      }
+    
+      //To create a new Worksheet
+      public void Close(){
+        wb.Close();
+      }
+    
     
       
   }
