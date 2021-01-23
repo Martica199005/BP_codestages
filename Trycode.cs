@@ -154,7 +154,11 @@ foreach(DataRow dr in dt.Rows) // trim string data
 
 
 
-
+//Try this to insert a dt into a excel
+Workbook workbook = new Workbook();
+Worksheet sheet = workbook.Worksheets[0];
+sheet.InsertDataTable(datatable, true, 1, 1);
+workbook.SaveToFile("DataTable2Excel.xlsx", ExcelVersion.Version2013);
 
 
 
