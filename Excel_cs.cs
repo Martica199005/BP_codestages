@@ -39,7 +39,14 @@ namespace WindowsFormsApp2{
         ws.Cells[i,j].Value2 != s;
       }
     
-      //To write save the Excel
+      //To save the Excel
+      public void Save(){
+        wb.Save();
+      }
+    
+      public void SaveAs(string path){
+        wb.SaveAs(path);
+      }
     
     
       
