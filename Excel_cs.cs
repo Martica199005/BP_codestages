@@ -70,7 +70,18 @@ namespace WindowsFormsApp2{
       }
     
     
-      
+      //To select a Worksheet
+      public void SelectWorkSheet(int SheetNumber){
+        this.ws = wb.Worksheets[SheetNumber];
+      }
+    
+      //To delete a Worksheet
+      public void DeleteWorkSheet(int SheetNumber){
+        wb.Worksheets[SheetNumber].Delete();
+      }
+    
+    
+    //excel.Application.DisplayAlerts = false  
   }
 
 }
