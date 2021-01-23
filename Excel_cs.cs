@@ -88,9 +88,9 @@ namespace WindowsFormsApp2{
       Range range= (Range)ws.Range[ws.Cells[starti, straty],ws.Cells[endi, endy]];
       //obj is an holder for the values
       object[,] holder = range.Value2;
-      string[,] returnstring= new string[endi-starti,endy-starty];
-      for(int p=1;p<=endi-starti;p++){
-        for(int q=1;q<=endy-starty;q++){
+      string[,] returnstring= new string[endi-starti+1,endy-starty+1];
+      for(int p=1;p<=endi-starti+1;p++){
+        for(int q=1;q<=endy-starty+1;q++){
           returnstring[p-1,q-1]=holder[p,q].ToString();
         }
       }
@@ -98,6 +98,10 @@ namespace WindowsFormsApp2{
     }
     
     //To write multiple cells
+    public string[,] WriteRange(int starti, int straty, int endi, int endy,string[,] writestring){
+      Range range= (Range)ws.Range[ws.Cells[starti, straty],ws.Cells[endi, endy]];
+      range.Value2=writestring;
+    }
   }
 
 }
