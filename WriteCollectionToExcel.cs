@@ -1,7 +1,7 @@
 // BP Code stage to write a collection to an Excel file, it copies also the empty rows.
-//ddl to import: Windows.Forms, Microsoft.Office.Interop.Excel, Syste,Collections.Generic
+//ddl to import: Windows.Forms.dll, Microsoft.Office.Interop.Excel.dll, Syste,Collections.Generic.dll
 // Input: dt collection, path_file string, start_r and start_c number, Sheet_number number
-
+// you can also put as namespace imports: Excel= Microsoft.Office.Interop.Excel
 
 
 Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
