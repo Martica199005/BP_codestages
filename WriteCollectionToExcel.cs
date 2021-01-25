@@ -1,3 +1,9 @@
+// BP Code stage to write a collection to an Excel file
+//It copies also the empty rows
+
+
+
+
 Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
 Microsoft.Office.Interop.Excel.Workbook wb = excelApp.Workbooks.Open(path_file);
 //Microsoft.Office.Interop.Excel.Worksheet workSheet = excelApp.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
@@ -13,9 +19,16 @@ if (dt.Rows.Count!=0)
 	{
 	 foreach(DataColumn dc in dt.Columns)
 		{
-			
-			workSheet.Cells[i,j] =dr[dc].ToString();
-			j++;
+			string ColumnName = dc.ColumnName.ToString();
+		 	if(i==Decimal.ToInt32(start_r)){
+				workSheet.Cells[i,j] =ColumnName;
+				j++;
+			}
+		 	else{
+				workSheet.Cells[i,j] =dr[dc].ToString();
+				j++;
+			}
+			}
 			
 		}
 	i++;
