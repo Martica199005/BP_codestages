@@ -1,5 +1,5 @@
-// BP Code stage to write a collection to an Excel file
-//It copies also the empty rows
+// BP Code stage to write a collection to an Excel file, it copies also the empty rows.
+//ddl to import: Windows.Forms, Microsoft.Office.Interop.Excel, Syste,Collections.Generic
 // Input: dt collection, path_file string, start_r and start_c number, Sheet_number number
 
 
