@@ -1,7 +1,7 @@
 //Do conversion from string to int
 //input: dt DataTable, Field string, order_desc bool
 //output dt_out DataTable, Success bool
-
+//Do conversion from string to int
 
 try 
 {
@@ -10,8 +10,7 @@ try
 	//add column and convert to int
 	dt.Columns.Add("StrInt", typeof(int));
 	foreach( DataRow dr in dt.Rows){
-	 	dr["StrInt"]=Convert.ToInt32(dr[Field]);
-		//Console.WriteLine(dr["StrInt"].GetType()); to see the type 
+	 	dr["StrInt"]=Convert.ToInt32(dr["IntStr"]);
 	 }
 	// sort collection by field
 	string Field="StrInt";
@@ -22,7 +21,10 @@ try
 	{
 		DataView dv = dt.DefaultView;
 		dv.Sort = Field+order_desc_str;
+		 
 		dt_out = dv.ToTable();
+		// delete temporary column 
+		dt_out.Columns.Remove("StrInt");
 		
 	}
 }
@@ -31,8 +33,6 @@ catch (Exception e)
   Success=false;
   dt_out=null;
 }
-
-
 
 /*
 try 
