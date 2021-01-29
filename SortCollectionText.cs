@@ -1,4 +1,5 @@
-//Do conversion from string to int
+//You want to order a DataTable which has a column with numbers but of type string ( ex: "1"), it makes before the conversion from string to int and after that
+//it sort the DataTable in decrescent or crescent order
 //input: dt DataTable, Field string, order_desc bool
 //output dt_out DataTable, Success bool
 //Do conversion from string to int
