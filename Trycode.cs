@@ -115,7 +115,7 @@ using(System.IO.StreamReader file =  new System.IO.StreamReader(path_file))
 
 
 
---- dt max min
+//dt max min
 // aggiusta questo codice 
 int minAccountLevel = int.MaxValue;
 int maxAccountLevel = int.MinValue;
@@ -127,30 +127,10 @@ foreach (DataRow dr in table.Rows)
 }
 
 
----funziona
+//funziona
 
 int minLavel = Convert.ToInt32(dt.Compute("min([AccountLevel])", string.Empty));
 
-//trim col names
-foreach(DataColumn dc in dt.Columns) // trim column names
-{
-   dc.ColumnName = dc.ColumnName.Trim();
-}
-
-foreach(DataRow dr in dt.Rows) // trim string data
-{
-  foreach(DataColumn dc in dt.Columns)
-  {
-      if(dc.DataType == typeof(string))
-      {
-	 object o = dr[dc];
-	 if(!Convert.IsDBNull(o) && o != null)
-	 {
-	    dr[dc] = o.ToString().Trim();
-	 }
-      }
-  }
-}  
 
 
 
