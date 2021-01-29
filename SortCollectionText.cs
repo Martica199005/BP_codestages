@@ -11,6 +11,7 @@ try
 	dt.Columns.Add("StrInt", typeof(int));
 	foreach( DataRow dr in dt.Rows){
 	 	dr["StrInt"]=Convert.ToInt32(dr[Field]);
+		//Console.WriteLine(dr["StrInt"].GetType()); to see the type 
 	 }
 	// sort collection by field
 	string Field="StrInt";
