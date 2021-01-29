@@ -44,8 +44,8 @@ namespace ConsoleApplication2
 }
 
 
----- bold  
--- https://www.youtube.com/watch?v=lHF1WVoy5gs&list=LL&index=11&t=18s
+// bold  
+// https://www.youtube.com/watch?v=lHF1WVoy5gs&list=LL&index=11&t=18s
 using System;
 using Excel=Microsoft.Office.Interop.Excel;
 
@@ -53,64 +53,6 @@ namespace mysheet
 {
 	class Program
 		{ Microsoft.Office.Interop.Excel.Application excel= new Microsoft.Office.Interop.
-
-
-
-// C# code for collections in BP
-
-//libraries: System.dll, System.Core.dll, System.Data.DataSetExtensions.dll
-
-//Namespace: System.Linq, System.Data, System.Collections.Generic
-
-
-//input: inData(ID(number),Name(Text),Sal(Number)) collection, id Text 
-// output outData collection
-
-
-//CODE
-
-
-outData= new DataTable();
-if(inData.Rows.Count>0){
-	var result= inData.AsEnumerable().Where(row =>row["ID"].ToString()==value).ToList();
-	outData= inData.Clone();
-	foreach(var rowItem in result){
-		outData.ImportRow(rowItem);
-	}
-}
-
-
-
-
-----
-
-if (dt.Rows.Count!=0)
-{
-   //Try to do something here
-}
-
-
-
-
-//find line
-
-
-
-//List<string> found = new List<string>(); //found.Add(line);
-string line;
-found="empty";
-
-
-using(System.IO.StreamReader file =  new System.IO.StreamReader(path_file))
-{
-   while((line = file.ReadLine()) != null)
-   {
-      if(line.Contains(word))
-      {
-		  found=line.Trim();
-      }
-   }
-}
 
 
 
