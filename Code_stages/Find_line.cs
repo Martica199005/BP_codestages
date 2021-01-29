@@ -1,5 +1,5 @@
 
-//Find line
+//Find line, put try catch
 
 string line;
 found="empty";
