@@ -20,3 +20,26 @@ if(inData.Rows.Count>0){
 		outData.ImportRow(rowItem);
 	}
 }
+
+
+//TRY CATCH
+
+try
+{
+	outData= new DataTable();
+	Success=true;
+	if(inData.Rows.Count>0)
+	{
+		var result= inData.AsEnumerable().Where(row =>row["ID"].ToString()==value).ToList();
+		outData= inData.Clone();
+		foreach(var rowItem in result)
+		{
+			outData.ImportRow(rowItem);
+		}
+	}
+}
+catch (Exception e)
+{
+  Success=false;
+  outData=null;
+}
