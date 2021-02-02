@@ -84,8 +84,9 @@ workbook.SaveToFile("DataTable2Excel.xlsx", ExcelVersion.Version2013);
 
 
 
-
-
+//Try IsNumeric
+int n;
+bool isNumeric = int.TryParse("123", out n);
 
 
 
