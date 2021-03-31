@@ -1,0 +1,26 @@
+//input dt, output dt1
+
+
+Success=true;
+dt1=null;
+try
+{
+	if(dt.Rows.Count>0)
+	{
+		dt1=new DataTable{Columns = { { "Key", typeof(string) } }};
+		
+		foreach (DataRow dtRow in dt.Rows)
+		{
+		  var result= dtRow[0].ToString()+dtRow[1].ToString()+dtRow[2].ToString();
+		  dt1.Rows.Add(result);
+
+		}
+	}
+}
+catch (Exception e)
+{
+  Success=false;
+  dt1=null;
+  
+
+}
